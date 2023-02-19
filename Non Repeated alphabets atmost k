@@ -1,0 +1,40 @@
+Code:
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int x=sc.nextInt();
+		int count=0;
+	    for(int i=0;i<n;i++)
+	    {
+	        String str=sc.next();
+	        String newStr=str;
+	        String last="";
+	        for(int j=0;j<str.length();j++)
+	        {
+	            int f=0;
+	            for(int k=0;k<newStr.length();k++)
+	            {
+	                if(j!=k)
+	                {
+	                if(str.charAt(j)==newStr.charAt(k))
+	                {
+	                    f=1;
+	                    break;
+	                }
+	                }
+	            }
+	            if(f==0)
+	                last+=str.charAt(j);
+	        }
+	        int l=last.length();
+	        if(l<=x)
+	        {
+	            count++;
+	        }
+	    }
+	    System.out.print(count);
+	}
+}
